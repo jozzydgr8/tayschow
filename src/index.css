@@ -1,13 +1,153 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root{
+  --bronze: #c9a564;
+  --brown-brush: #a0522d;
+  --background: #f8f4ec;
+  --orange-highlight: #ffa500;
+  --dark-chocolate: #d2691e;
+  --font-dancing-script: "Dancing Script", cursive;
+  --dark:black;
+  --font-bodoni:'bodoni'
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* specialclasses special classes or whole classes */
+body{
+  font-family: var(--font-bodoni) ;
+}
+
+h1{
+  color: var(--dark-chocolate);
+}
+img{
+  width: 80%;
+}
+section > .container-fluid{
+  padding:5% 10%;
+}
+/* navbar navbar */
+.navbtn{
+  background: var(--background);
+  padding: 7px 22px;
+  border-radius: 40px;
+  font-family: var(--font-dancing-script);
+  border: none;
+  color: var(--orange-highlight);
+}
+.navM{
+  color: var(--dark);
+}
+.navbtn>span{
+  font-size: 30px;
+}
+.navLogo{
+  width: 35%;
+}
+@media (max-width:750px) {
+  .navbtn{
+    padding:6px 10px;
+  }
+  .navbtn>span{
+    font-size: 20px;
+  }
+  .navLogo{
+    width: 30%;
+  }
+  #header{
+    max-height: 70vh;
+  }
+}
+/* header header */
+#header{
+  /* background-image: url('./assets/demopic.jpeg'); */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  color: var(--brown-brush);
+}
+#header span{
+  background: var(--background);
+  padding: 3px;
+  border-radius: 5px;
+}
+#header > div, .content{
+  height: 100%;
+  width: 100%;
+  backdrop-filter:blur(7px);
+}
+/* about about about */
+#about button, #menu button{
+  background: var(--orange-highlight);
+  padding: 7px;
+  border: none;
+  border-radius:5px;
+}
+#about img{
+  box-shadow: 5px 5px var(--background);
+  border-radius: 20px;
+
+  text-align: center;
+}
+
+
+#menu{
+  background: var(--background);
+}
+#menu .row{
+  background: white;
+  margin-bottom: 20px;
+  height: 220px;
+}
+#menu h3{
+  color: var(--dark-chocolate);
+  padding-top: 10px;
+}
+
+.product-image{
+  height:200px;
+  overflow: hidden;
+}
+#menu .row img{
+  height: 100%;
+  object-fit: contain;
+}
+/* footer footer */
+#footer{
+  background: var(--brown-brush);
+}
+#footer h3{
+  color: var(--dark-chocolate);
+}
+
+
+
+/* video vdieo vide */
+/* VideoBackground.css */
+.video-background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1; /* Puts the video behind the content */
+}
+
+.content {
+  position: relative;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10% 15%;
+  text-align: left;
+  z-index: 1; /* Ensures content appears over the video */
 }

@@ -6,7 +6,7 @@ function App() {
   const router = createBrowserRouter(
       createRoutesFromChildren(
         <>
-        <Route path='/taykitchen' element={<Layout/>}>
+        <Route path='/tayschow' element={<Layout/>}>
         <Route index element={<Index/>}/>
 
         </Route>

@@ -4,7 +4,7 @@ export const Footer = ()=>{
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-3">
-                        <h3>Loremhjuhoe</h3>
+                        <h3>Disclaimer</h3>
                         <p>
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                              Vitae modi illo similique ea animi eligendi deleniti

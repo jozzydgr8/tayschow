@@ -8,12 +8,22 @@
   --dark:black;
   --font-bodoni:'bodoni'
 }
+*, body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /* specialclasses special classes or whole classes */
 body{
   font-family: var(--font-bodoni) ;
 }
 
+/* .row {
+  padding: inherit; 
+  margin: 0; Reset margin if there's a negative margin from a framework
+  box-sizing: border-box; 
+} */
 h1{
   color: var(--dark-chocolate);
 }
@@ -22,6 +32,16 @@ img{
 }
 section > .container-fluid{
   padding:5% 10%;
+}
+.sectionAnimation{
+  scroll-behavior: smooth;
+  animation: backInLeft;
+  animation-duration: 2.0s;
+}
+.sectionAnimationRight{
+  scroll-behavior: smooth;
+  animation: backInRight;
+  animation-duration: 1.5s;
 }
 /* navbar navbar */
 .navbtn{
@@ -110,6 +130,14 @@ section > .container-fluid{
   height: 100%;
   object-fit: contain;
 }
+#menu h4{
+  background: var(--bronze);
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 0 5px;
+  color: var(--background);
+}
+
 /* footer footer */
 #footer{
   background: var(--brown-brush);

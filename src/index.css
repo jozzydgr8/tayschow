@@ -12,13 +12,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 /* specialclasses special classes or whole classes */
 body{
   font-family: var(--font-bodoni) ;
 }
-
+a, button{
+  color: inherit;
+}
 /* .row {
   padding: inherit; 
   margin: 0; Reset margin if there's a negative margin from a framework
@@ -109,34 +112,34 @@ section > .container-fluid{
 }
 
 
+/* menu menu */
 #menu{
   background: var(--background);
 }
-#menu .row{
-  background: white;
-  margin-bottom: 20px;
-  height: 220px;
+#menu h4{
+  display: inline-block;
+  background: var(--bronze);
+  color: var(--background);
+  padding:2px 25px 2px 5px;
+
 }
-#menu h3{
-  color: var(--dark-chocolate);
-  padding-top: 10px;
+.product{
+ padding: 20px;
+ background: white;
+ margin-bottom: 30px;
+ color: black;
+}
+.product-image{
+  margin-bottom: 20px;
+}
+.product img{
+  width:40%;
+}
+.product h3{
+  color: var(--brown-brush);
 }
 
-.product-image{
-  height:200px;
-  overflow: hidden;
-}
-#menu .row img{
-  height: 100%;
-  object-fit: contain;
-}
-#menu h4{
-  background: var(--bronze);
-  display: inline-block;
-  margin-bottom: 20px;
-  padding: 0 5px;
-  color: var(--background);
-}
+
 
 /* footer footer */
 #footer{

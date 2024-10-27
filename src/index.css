@@ -22,11 +22,10 @@ body{
 a, button{
   color: inherit;
 }
-/* .row {
-  padding: inherit; 
-  margin: 0; Reset margin if there's a negative margin from a framework
-  box-sizing: border-box; 
-} */
+#header span, .navbtn, .shopping{
+  cursor: pointer;
+  transition: all 0.2s;
+}
 h1{
   color: var(--dark-chocolate);
 }
@@ -47,18 +46,31 @@ section > .container-fluid{
   animation-duration: 1.5s;
 }
 /* navbar navbar */
-.navbtn{
+.navbtn, .shopping{
   background: var(--background);
-  padding: 7px 22px;
   border-radius: 40px;
-  font-family: var(--font-dancing-script);
   border: none;
   color: var(--orange-highlight);
+ 
+}
+.navbtn{
+  font-family: var(--font-dancing-script);
+  display: flex;
+  gap:2px;
+  align-items: center;
+  padding: 7px 22px;
+}
+.shopping{
+  padding: 7px 14px;
+}
+.shopping:hover,.navbtn:hover{
+  background: var(--orange-highlight);
+  color: var(--background);
 }
 .navM{
   color: var(--dark);
 }
-.navbtn>span{
+.navbtn>span, .shopping{
   font-size: 30px;
 }
 .navLogo{
@@ -68,7 +80,7 @@ section > .container-fluid{
   .navbtn{
     padding:6px 10px;
   }
-  .navbtn>span{
+  .navbtn>span, .shopping{
     font-size: 20px;
   }
   .navLogo{
@@ -85,12 +97,17 @@ section > .container-fluid{
   background-position: center center;
   background-repeat: no-repeat;
   height: 100vh;
-  color: var(--brown-brush);
+  
 }
 #header span{
   background: var(--background);
   padding: 3px;
   border-radius: 5px;
+  color: var(--brown-brush);
+}
+#header span:hover{
+  background: var(--brown-brush);
+  color: var(--background);
 }
 #header > div, .content{
   height: 100%;

@@ -1,6 +1,6 @@
 import {  Link } from "react-router-dom"
 import logo from '../assets/tayLogo.png'
-import {  MenuUnfoldOutlined } from "@ant-design/icons"
+import {  MenuUnfoldOutlined, ShoppingCartOutlined } from "@ant-design/icons"
 
 function Navbar() {
   return (
@@ -10,7 +10,12 @@ function Navbar() {
                 <div style={{paddingLeft:'5%'}}>
                     <img className='navLogo'src={logo} alt="logo" />
                 </div>
-                <div style={{paddingRight:'5%'}}>
+                
+                <div style={{display:"flex", gap:'5px', paddingRight:'5%', justifyContent:"center", alignItems:"center"}}>
+                <div className="shopping">
+                    <ShoppingCartOutlined/>
+                </div>
+                <div >
                 <button  className="navbtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
                     <span className="navM">Menu</span> <MenuUnfoldOutlined/>
                 </button>
@@ -32,23 +37,12 @@ function Navbar() {
                     <li className="nav-item">
                         <a className="nav-link" href="#">Contact Us</a>
                     </li>
-                    {/* <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
-                        </a>
-                        <ul className="dropdown-menu">
-                        <li><a className="dropdown-item" href="#">Action</a></li>
-                        <li><a className="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                            <hr className="dropdown-divider"/>
-                        </li>
-                        <li><a className="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li> */}
                     </ul>
                 </div>
                 </div>
                 </div>
+                </div>
+                
             </div>
         </div>
     </main>

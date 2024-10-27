@@ -6,6 +6,9 @@ export const Menu = ()=>{
         <section id='menu'>
             <div className="container-fluid">
                 <h1>Our Menu</h1><br/>
+                <div style={{display:"flex"}}>
+
+                </div>
                 <h4>Pastries</h4>
                 {
                     Data && Data.filter(menu => menu.category == 'pastries').map(menu=>(

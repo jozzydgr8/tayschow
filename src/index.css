@@ -22,7 +22,7 @@ body{
 a, button{
   color: inherit;
 }
-#header span, .navbtn, .shopping{
+#header span, .navbtn, .shopping, #menu h4{
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -130,19 +130,27 @@ section > .container-fluid{
 
 
 /* menu menu */
-#menu{
-  background: var(--background);
+#menu .container-fluid{
+  background: var(--bronze);
 }
-#menu h4{
+.menu-active{
   display: inline-block;
   background: var(--bronze);
   color: var(--background);
-  padding:2px 25px 2px 5px;
+  padding:10px 30px;
+  border-radius: 7px 7px 0px 0px;
+  margin: 0;
 
+}
+@media (max-width:750px) {
+  #menu h4{
+    padding: 10px ;
+  }
 }
 .product{
  padding: 20px;
  background: white;
+ border-radius: 8px;
  margin-bottom: 30px;
  color: black;
 }

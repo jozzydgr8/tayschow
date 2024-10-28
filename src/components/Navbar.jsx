@@ -37,6 +37,9 @@ function Navbar() {
                     <li className="nav-item">
                         <a className="nav-link" href="#">Contact Us</a>
                     </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href='#'>Sign In</a>
+                    </li>
                     </ul>
                 </div>
                 </div>

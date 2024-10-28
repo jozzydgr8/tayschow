@@ -6,7 +6,8 @@
   --dark-chocolate: #d2691e;
   --font-dancing-script: "Dancing Script", cursive;
   --dark:black;
-  --font-bodoni:'bodoni'
+  --font-bodoni:'bodoni';
+  --font-roboto:'roboto', sans-serif;
 }
 *, body{
   margin: 0;
@@ -18,6 +19,7 @@
 /* specialclasses special classes or whole classes */
 body{
   font-family: var(--font-bodoni) ;
+  font-weight: 300;
 }
 a, button{
   color: inherit;
@@ -28,6 +30,11 @@ a, button{
 }
 h1{
   color: var(--dark-chocolate);
+  text-transform: uppercase;
+}
+
+h1, h3{
+  font-family: var(--font-roboto);
 }
 img{
   width: 80%;
@@ -141,11 +148,6 @@ section > .container-fluid{
   border-radius: 7px 7px 0px 0px;
   margin: 0;
 
-}
-@media (max-width:750px) {
-  #menu h4{
-    padding: 10px ;
-  }
 }
 .product{
  padding: 20px;

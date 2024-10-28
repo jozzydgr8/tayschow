@@ -17,7 +17,7 @@ export const About =()=>{
                     <div className="col-md-8">
                         <div>
                             <br/>
-                            <h1>About Us</h1>
+                            <h1>ABOUT US</h1>
                             <p className='fSection'>
                                 Welcome to Nigeria's No.1 Pastry in Central California!
                                 We are dedicated to bringing you the authentic taste of Nigerian pastries.

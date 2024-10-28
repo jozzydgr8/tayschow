@@ -1,4 +1,4 @@
-import { signInWithPopup } from "firebase/auth";
+import { signInWithPopup, signInWithRedirect } from "firebase/auth";
 import { addDoc } from "firebase/firestore";
 import { auth, provider } from "../App";
 import { UseContextAuth } from "../context/UseContextAuth";
@@ -8,7 +8,7 @@ import {Input, Form} from 'antd'
 export const SignUser = ()=>{
 const {dispatch} = UseContextAuth();
     const handleClick = ()=>{
-        signInWithPopup(auth, provider).then(data=>{
+        signInWithRedirect(auth, provider).then(data=>{
             const {user} =data;
             dispatch({type:'signUser', payload:user});
             addDoc(userRef, {

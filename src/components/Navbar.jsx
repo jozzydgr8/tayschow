@@ -3,6 +3,8 @@ import logo from '../assets/tayLogo.png'
 import {  MenuUnfoldOutlined, ShoppingCartOutlined } from "@ant-design/icons"
 import { UseContextAuth } from "../context/UseContextAuth"
 import { message } from "antd";
+import { signOut } from "firebase/auth";
+import { auth } from "../App";
 
 function Navbar() {
     const {user} = UseContextAuth();
@@ -14,6 +16,9 @@ function Navbar() {
             window.location.href='/tayschow/cart'
         }
 
+    }
+    const handleLogOut = ()=>{
+        signOut(auth)
     }
   return (
     <main>
@@ -50,7 +55,11 @@ function Navbar() {
                         <a className="nav-link" href="#">Contact Us</a>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to='login'>{user ? 'Log Out':'Sign In'}</Link>
+                        {
+                            user ? <span className="nav-link" onClick={handleLogOut}>logout</span>:
+                            <Link className="nav-link" to='login'>Sign In</Link>
+                        }
+                        
                     </li>
                     </ul>
                 </div>

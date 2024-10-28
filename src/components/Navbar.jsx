@@ -1,8 +1,20 @@
 import {  Link } from "react-router-dom"
 import logo from '../assets/tayLogo.png'
 import {  MenuUnfoldOutlined, ShoppingCartOutlined } from "@ant-design/icons"
+import { UseContextAuth } from "../context/UseContextAuth"
+import { message } from "antd";
 
 function Navbar() {
+    const {user} = UseContextAuth();
+    const handleCartDirect = ()=>{
+        if(!user){
+            message.info('log in to place order');
+
+        }else{
+            window.location.href='/tayschow/cart'
+        }
+
+    }
   return (
     <main>
         <div className="container-fluid">
@@ -12,7 +24,7 @@ function Navbar() {
                 </div>
                 
                 <div style={{display:"flex", gap:'5px', paddingRight:'5%', justifyContent:"center", alignItems:"center"}}>
-                <div className="shopping">
+                <div className="shopping" onClick={handleCartDirect}>
                     <ShoppingCartOutlined/>
                 </div>
                 <div >
@@ -29,7 +41,7 @@ function Navbar() {
                 <div className="offcanvas-body">
                     <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" href="#">Home</a>
+                        <Link className="nav-link active" aria-current="page" to="/tayschow">Home</Link>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#">About Us</a>
@@ -38,7 +50,7 @@ function Navbar() {
                         <a className="nav-link" href="#">Contact Us</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href='#'>Sign In</a>
+                        <Link className="nav-link" to='login'>{user ? 'Log Out':'Sign In'}</Link>
                     </li>
                     </ul>
                 </div>

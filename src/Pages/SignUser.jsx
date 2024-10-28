@@ -3,6 +3,7 @@ import { addDoc } from "firebase/firestore";
 import { auth, provider } from "../App";
 import { UseContextAuth } from "../context/UseContextAuth";
 import { userRef } from "../App";
+import {Input, Form} from 'antd'
 
 export const SignUser = ()=>{
 const {dispatch} = UseContextAuth();
@@ -22,8 +23,12 @@ const {dispatch} = UseContextAuth();
         })
     }
     return(
-        <section>
+        <section style={{marginTop:'80px'}}>
             <div className="container-fluid">
+                <Form>
+                    <Input />
+                    <Input.Password/>
+                </Form>
                 <button onClick={handleClick} style={{marginTop:'100px'}}>sign in with gmail</button>
             </div>
         </section>

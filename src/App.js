@@ -9,6 +9,7 @@ import { getFirestore, collection } from 'firebase/firestore';
 import {UseContextData} from './context/UseContextData';
 import {UseContextAuth} from './context/UseContextAuth';
 import { SignUser } from './Pages/SignUser';
+import { Cart } from './Pages/Cart';
 
 
 
@@ -122,12 +123,14 @@ function App() {
         <Route path='/tayschow' element={<Layout/>}>
         <Route index element={<Index/>}/>
         <Route path='login' element={<SignUser/>} />
+        <Route path='cart' element={<Cart/>} />
 
         </Route>
 
         <Route path='/' element={<Layout/>}>
         <Route index element={<Index/>}/>
         <Route path='login' element={<SignUser/>} />
+        <Route path='cart' element={<Cart/>} />
         </Route>
 
         </>

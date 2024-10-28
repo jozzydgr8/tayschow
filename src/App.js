@@ -4,7 +4,11 @@ import { Index } from './Pages/Index';
 import { useEffect } from 'react';
 import { initializeApp } from "firebase/app";
 import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
-import { getAuth } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, GoogleAuthProvider } from 'firebase/auth';
+import { getFirestore, collection } from 'firebase/firestore';
+import {UseContextData} from './context/UseContextData';
+import {UseContextAuth} from './context/UseContextAuth';
+import { SignUser } from './Pages/SignUser';
 
 
 
@@ -33,12 +37,60 @@ const appCheck = initializeAppCheck(app, {
   provider: new ReCaptchaV3Provider(process.env.REACT_APP_appcheck),
   isTokenAutoRefreshEnabled: true // This automatically refreshes App Check tokens
 });
-export const auth = getAuth();
+const auth = getAuth();
+const provider = new GoogleAuthProvider();
+//db
+const db = getFirestore();
+const userRef = collection(db, 'user')
+export {auth, provider, userRef}
 function App() {
 
+  //import 
+  const {dispatch,loading} = UseContextData();
+  const {dispatch: dis, user, loading:load} = UseContextAuth();
   //auth
+  useEffect(()=>{
+    dis({type:'loading', payload:true})
+    const authenticate = async ()=>{
+      try{
+        const unsubscribe = onAuthStateChanged(auth, user=>{
+          if(user){
+            const user = auth.currentUser;
+            dis({type:'signUser', payload:user});
+            console.log('signed in')
+          }else{
+            dis({type:'signUser', payload:null});
+            console.log('logged out')
+          }
+
+          // const userID = user && user.uid
+          // const q = userID != process.env.REACT_APP_acceptedID ? query(orderRef, where('userID', '==', userID)) : orderRef;
+          // const unSubscribeOrder = onSnapshot(q, (querySnapshot) => {
+          //   const dataList = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+          //   dispatch({type:'getOrder', payload:dataList})
+            
+          // }, (error) => {
+          //   console.error('Error fetching data: ', error);
+          // });
+        })
+      }catch(error){
+        console.error(error)
+      }
+    }
+
+    authenticate();
+
+  
+        
+    
+    return ()=>{
+      authenticate();
+    }
+  },[]);
 
 
+
+  //data
   //animation
   useEffect(()=>{
     const animation = ()=>{
@@ -69,11 +121,13 @@ function App() {
         <>
         <Route path='/tayschow' element={<Layout/>}>
         <Route index element={<Index/>}/>
+        <Route path='login' element={<SignUser/>} />
 
         </Route>
 
         <Route path='/' element={<Layout/>}>
         <Route index element={<Index/>}/>
+        <Route path='login' element={<SignUser/>} />
         </Route>
 
         </>

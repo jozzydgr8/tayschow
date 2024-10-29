@@ -7,17 +7,17 @@ export const Product = ({menu})=>{
                             <div className="row" style={{display:'flex', alignItems:'center', }}>
                                 <div className="col-md-4">
                                     <div className="product-image">
-                                    <img className="aSection" src={menu.image} alt='menuImg'/>
+                                    <img className="" src={menu.image} alt='menuImg'/>
                                     </div>
                                 </div>
                                 <div  className="col-md-8">
                                     <div className='product-desc'>
-                                    <h3 className="aSection">{menu.title}</h3>
-                                    <p className="fSection">
+                                    <h3 className="">{menu.title}</h3>
+                                    <p className="">
                                         {menu.desc}
                                     </p>
                                     <br/>
-                                    <Link to={`/tayschow/${menu.id}`}  className="aSection">Order Now ${menu.prize}</Link>
+                                    <Link to={`/tayschow/${menu.id}`}  className="">Order Now ${menu.prize}</Link>
                                     </div>
                                 </div>
                             </div>

@@ -34,10 +34,18 @@ const app = initializeApp(firebaseConfig);
 //appcheeck app cjeck
 window.FIREBASE_APPCHECK_DEBUG_TOKEN = true;
 
-const appCheck = initializeAppCheck(app, {
-  provider: new ReCaptchaV3Provider(process.env.REACT_APP_appcheck),
-  isTokenAutoRefreshEnabled: true // This automatically refreshes App Check tokens
-});
+const isGitHubPages = window.location.hostname.includes("github.io");
+if (!isGitHubPages) { // Enable App Check only if not on Edge or GitHub Pages
+  initializeAppCheck(app, {
+      provider: new ReCaptchaV3Provider(process.env.REACT_APP_appcheck),
+      isTokenAutoRefreshEnabled: true
+  });
+}
+
+// const appCheck = initializeAppCheck(app, {
+//   provider: new ReCaptchaV3Provider(process.env.REACT_APP_appcheck),
+//   isTokenAutoRefreshEnabled: true 
+// });
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
 //db
@@ -122,14 +130,19 @@ function App() {
         <>
         <Route path='/tayschow' element={<Layout/>}>
         <Route index element={<Index/>}/>
-        <Route path='login' element={<SignUser/>} />
         <Route path='cart' element={<Cart/>} />
 
         </Route>
+        <Route path='/tayschow/login' element={<SignUser/>}  >
+
+        </Route>
+        <Route path='/login' element={<SignUser/>}  >
+
+        </Route>
+
 
         <Route path='/' element={<Layout/>}>
         <Route index element={<Index/>}/>
-        <Route path='login' element={<SignUser/>} />
         <Route path='cart' element={<Cart/>} />
         </Route>
 

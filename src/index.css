@@ -40,7 +40,7 @@ img{
   width: 80%;
 }
 section > .container-fluid{
-  padding:5% 10%;
+  padding:3% 7%;
 }
 .sectionAnimation{
   scroll-behavior: smooth;
@@ -208,4 +208,47 @@ section > .container-fluid{
   padding: 10% 15%;
   text-align: left;
   z-index: 1; /* Ensures content appears over the video */
+}
+
+/* sign user sign user */
+#sign-user img{
+  width: 10%;
+}
+#sign-user form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  cursor: pointer;
+}
+#sign-user form > input, #sign-user button{
+  padding:10px 5px;
+  border-radius: 5px;
+}
+#sign-user form > button{
+  background: var(--brown-brush);
+  color:var(--background);
+  border: none;
+}
+
+#sign-user{
+  background: var(--background);
+  font-family: var(--font-roboto);
+  min-height: 100dvh;
+  
+  
+}
+#sign-user a {
+  text-decoration: none;
+  color: var(--dark-chocolate);
+}
+.googlebtn{
+  width:100%;
+  background: var(--dark);
+  color: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  font-size: large;
 }

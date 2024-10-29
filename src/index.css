@@ -122,11 +122,12 @@ section > .container-fluid{
   backdrop-filter:blur(7px);
 }
 /* about about about */
-#about button, #menu button{
+#about button, #menu button, .product a{
   background: var(--orange-highlight);
   padding: 7px;
   border: none;
   border-radius:5px;
+  text-decoration: none;
 }
 #about img{
   box-shadow: 5px 5px var(--background);
@@ -155,6 +156,7 @@ section > .container-fluid{
  border-radius: 8px;
  margin-bottom: 30px;
  color: black;
+
 }
 .product-image{
   margin-bottom: 20px;
@@ -251,4 +253,28 @@ section > .container-fluid{
   justify-content: center;
   gap: 30px;
   font-size: large;
+}
+/* id section id section id section */
+#idSection{
+  height: 20vh;
+}
+#idTemp{
+  background: white;
+}
+#idTemp img{
+  width: 60%;
+  
+}
+.tempImg{
+  
+}
+.tempProduct,.tempImg{
+  padding:30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  min-height: 550px;
+}
+.tempProduct{
+  background: var(--background);
 }

@@ -10,6 +10,7 @@ import {UseContextData} from './context/UseContextData';
 import {UseContextAuth} from './context/UseContextAuth';
 import { SignUser } from './Pages/SignUser';
 import { Cart } from './Pages/Cart';
+import { Id } from './Pages/Id';
 
 
 
@@ -42,6 +43,7 @@ if (!isGitHubPages) { // Enable App Check only if not on Edge or GitHub Pages
   });
 }
 
+//https://taykitchen-b36eb.firebaseapp.com/__/auth/handler?state=AMbdmDkh6UFKslKZdR3851qEh175Xrcd6_m1upzTbQYc2bIrnC98JamhHI0MnUysnbrx7_obpiri66PibtrQTCWmr0zE7k72HLhSQAZ1cgWvXc1askR07wCpZBxy2FuzVi4Ee7up0PlLjMyFZeaRkWAky8ISxfDrDx9NklYzZz346TQmazfD4xLobLDISXTwRzLnHNPhhqusPXbL9UShBZld1eo5xxCJr3hvwD010bePU1NZnVgw6FXCf-O55yufHYUWddTPMgxLeJKhiaCGtmimYSOnUvmb4oh6XBGtQ7navMkdo7nti5aFe3TLWpWM6HtCAbS4N9hC1jk&code=4%2F0AVG7fiQ3d_8zdZmKSjzd7tJbw_hggYQA_9lOrRytMCVgIhCcmqYruBU4qG966XX9Fiu0YA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none
 // const appCheck = initializeAppCheck(app, {
 //   provider: new ReCaptchaV3Provider(process.env.REACT_APP_appcheck),
 //   isTokenAutoRefreshEnabled: true 
@@ -131,6 +133,7 @@ function App() {
         <Route path='/tayschow' element={<Layout/>}>
         <Route index element={<Index/>}/>
         <Route path='cart' element={<Cart/>} />
+        <Route path=':id' element={<Id/>} />
 
         </Route>
         <Route path='/tayschow/login' element={<SignUser/>}  >
@@ -144,6 +147,7 @@ function App() {
         <Route path='/' element={<Layout/>}>
         <Route index element={<Index/>}/>
         <Route path='cart' element={<Cart/>} />
+        <Route path=':id' element={<Id/>} />
         </Route>
 
         </>

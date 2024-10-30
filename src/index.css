@@ -281,8 +281,13 @@ section > .container-fluid{
   border-radius: 20px;
   display: flex;
   justify-content: center;
-  min-height: 550px;
 }
 .tempProduct{
   background: var(--background);
+  flex-direction: column;
+}
+.tempProduct > div{
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
 }

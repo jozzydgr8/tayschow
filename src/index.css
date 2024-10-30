@@ -291,3 +291,22 @@ section > .container-fluid{
   padding: 20px;
   border-radius: 20px;
 }
+.cart-call {
+ 
+  font-size: 30px;
+}
+/* .cart-call a{
+  border: solid 1px var(--brown-brush);
+  padding: 5px;
+} */
+.cart-call, .cart-btn{
+  border-radius: 5px;
+  width: 100%;
+}
+.cart-btn{
+  background: var(--brown-brush);
+  color:var(--background);
+  border: none;
+  padding: 10px;
+  
+}

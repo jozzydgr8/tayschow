@@ -1,6 +1,8 @@
-import { PhoneFilled} from "@ant-design/icons"
-import { californiaPlaces } from "../Data"
+import { MobileFilled, MobileOutlined, PhoneFilled} from "@ant-design/icons"
+import { californiaPlaces, Data } from "../Data"
 import { Select } from "antd"
+import { AddCart } from "./AddCart";
+import { Product } from "./Product";
 
 
 export const IdTemp = ({result})=>{
@@ -8,9 +10,8 @@ export const IdTemp = ({result})=>{
     return(
         <>
         <section style={{backgroundImage:`url(${result.image})`, backgroundSize:'cover', backgroundPosition:"center"
-        , height:"30vh", paddingTop:"80px"}} >
-            <div className="container-fluid">
-                {result.title}
+        , height:"30vh"}} >
+            <div className="container-fluid" style={{width:"100%", height:"100%", backdropFilter:'brightness(50%)'}}>
             </div>
         </section>
 
@@ -37,11 +38,11 @@ export const IdTemp = ({result})=>{
                             </h1>
                             {result.desc}
                             <br/>
-                            ${result.prize}
+                            Price: ${result.prize}
                             <br/>
                             Delivery $5.00 central california.
                             <br/>
-                            <PhoneFilled/>
+                            <MobileOutlined/>
                             <a href={`tel:${process.env.REACT_APP_phone}`}>call +1909TastyChow</a> to place your order
                             </div>
                             <br/>
@@ -81,16 +82,50 @@ export const IdTemp = ({result})=>{
                                 product rating and reviews
                             </div>
                             </div>
+                            <br/>
                             
-                            <div>similar products</div>
+                            
                             <div>questions about this product chat</div>
-                            
-                            <button>add to cart</button>
-                            call
+                            <br/>
+                            <div style={{
+                                        display:"flex",
+                                        alignItems:'center',
+                                        }} 
+                                        className="row">
+                                        <div className="col-2">
+                                            <div className="cart-call">
+                                            <a href={`tel:${process.env.REACT_APP_phone}`}  ><MobileOutlined/></a>
+                                            </div>
+                                        
+                                        </div>
+                                    <div className="col-10">
+                                    <button className="cart-btn">add to cart</button>
+                                    </div>
+                            </div>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+
+        <section>
+            <div className="container-fluid">
+                <h1>Similar products</h1>
+                <div className="row">
+                    <div className="col-6">
+                        {
+                            Data.map(menu =>(
+                                <>
+                                </>
+                            )).slice(0,3)
+                        }
+                    
+                    </div>
+                </div>
+            
             </div>
         </section>
         

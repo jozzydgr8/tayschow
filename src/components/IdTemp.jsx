@@ -1,8 +1,9 @@
 import { MobileFilled, MobileOutlined, PhoneFilled} from "@ant-design/icons"
 import { californiaPlaces, Data } from "../Data"
-import { Select } from "antd"
+import {  Select } from "antd"
 import { AddCart } from "./AddCart";
 import { Product } from "./Product";
+import {Menu} from '../Pages/Menu'
 
 
 export const IdTemp = ({result})=>{
@@ -111,24 +112,9 @@ export const IdTemp = ({result})=>{
         </section>
 
 
-        <section>
-            <div className="container-fluid">
-                <h1>Similar products</h1>
-                <div className="row">
-                    <div className="col-6">
-                        {
-                            Data.map(menu =>(
-                                <>
-                                </>
-                            )).slice(0,3)
-                        }
-                    
-                    </div>
-                </div>
+                <Menu/>
             
-            </div>
-        </section>
-        
+            
         </>
         
     )

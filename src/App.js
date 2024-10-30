@@ -11,7 +11,7 @@ import {UseContextAuth} from './context/UseContextAuth';
 import { SignUser } from './Pages/SignUser';
 import { Cart } from './Pages/Cart';
 import { Id } from './Pages/Id';
-
+import ScrollToTop from './components/ScrollToTop';
 
 
 // Import the functions you need from the SDKs you need
@@ -130,6 +130,7 @@ function App() {
   const router = createBrowserRouter(
       createRoutesFromChildren(
         <>
+        
         <Route path='/tayschow' element={<Layout/>}>
         <Route index element={<Index/>}/>
         <Route path='cart' element={<Cart/>} />

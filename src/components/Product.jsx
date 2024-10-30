@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import {  NavLink } from "react-router-dom"
 
 export const Product = ({menu})=>{
     return(
@@ -17,7 +17,7 @@ export const Product = ({menu})=>{
                                         {menu.desc}
                                     </p>
                                     <br/>
-                                    <Link to={`/tayschow/${menu.id}`}  className="">Order Now ${menu.prize}</Link>
+                                    <NavLink to={`/tayschow/${menu.id}`}  className="">Order Now ${menu.prize}</NavLink>
                                     </div>
                                 </div>
                             </div>

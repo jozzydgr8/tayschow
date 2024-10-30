@@ -10,7 +10,7 @@ export const Id = ()=>{
     useEffect(()=>{
         const res = Data && Data.filter(product => product.id == id)
         setResult(res);
-    },[])
+    },[id])
 console.log(result)
     
     return(

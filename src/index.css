@@ -182,9 +182,13 @@ section > .container-fluid{
 #footer{
   background: var(--brown-brush);
 }
-#footer h3{
+footer h3{
   color: var(--dark-chocolate);
 }
+footer a{
+  text-decoration: none;
+}
+
 
 
 

@@ -7,13 +7,14 @@ import {Input, Form} from 'antd'
 import { useEffect, useState } from "react";
 import tayLogo from '../assets/tayLogo.png';
 import { GoogleOutlined, LeftOutlined } from "@ant-design/icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const SignUser = ()=>{
 const {dispatch} = UseContextAuth();
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
-const [view , setView] = useState(false)
+const [view , setView] = useState(false);
+const navigate = useNavigate();
 
 
     const handleSubmit =  async(e)=>{
@@ -51,9 +52,9 @@ const [view , setView] = useState(false)
     return(
         <section id="sign-user">
             <div className="container-fluid">
-                <Link style={{fontSize:"20px"}} to={'/tayschow'}>
+                <button className="return" onClick={() => navigate(-1)}>
                     <LeftOutlined/>
-                </Link>
+                </button>
 
                 <div style={{display:"flex",flexDirection:"column",
                     alignItems:'center', justifyContent:"center", gap:"15px"

@@ -252,9 +252,12 @@ footer a{
   
   
 }
-#sign-user a {
+#sign-user .return {
   text-decoration: none;
   color: var(--dark-chocolate);
+  font-size: 20px;
+  border: none;
+  background: transparent;
 }
 .googlebtn{
   width:100%;
@@ -303,14 +306,23 @@ footer a{
   border: solid 1px var(--brown-brush);
   padding: 5px;
 } */
-.cart-call, .cart-btn{
+.cart-call, .cart-btn, .dis-cart-btn{
   border-radius: 5px;
   width: 100%;
 }
 .cart-btn{
   background: var(--brown-brush);
   color:var(--background);
+}
+.cart-btn, .dis-cart-btn{
   border: none;
   padding: 10px;
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: not-allowed;
+}
+.dis-cart-btn{
+  background: var(--background);
 }

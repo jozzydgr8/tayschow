@@ -1,13 +1,21 @@
-import { MobileFilled, MobileOutlined, PhoneFilled} from "@ant-design/icons"
+import { CloseCircleOutlined, LockOutlined, MinusCircleOutlined, MobileFilled, MobileOutlined, PhoneFilled} from "@ant-design/icons"
 import { californiaPlaces, Data } from "../Data"
 import {  Select } from "antd"
 import { AddCart } from "./AddCart";
 import { Product } from "./Product";
 import {Menu} from '../Pages/Menu'
+import {UseContextAuth} from '../context/UseContextAuth'
+import { Link } from "react-router-dom";
 
 
 export const IdTemp = ({result})=>{
     const{Option} = Select;
+    const {user} = UseContextAuth()
+    const handleAddCart = ()=>{
+        if(!user){
+
+        }
+    }
     return(
         <>
         <section style={{backgroundImage:`url(${result.image})`, backgroundSize:'cover', backgroundPosition:"center"
@@ -100,9 +108,11 @@ export const IdTemp = ({result})=>{
                                         
                                         </div>
                                     <div className="col-10">
-                                    <button className="cart-btn">add to cart</button>
+                                    <button disabled={!user} className={user ? 'cart-btn':'dis-cart-btn'} onClick={handleAddCart}>add to cart {!user &&<LockOutlined/>}</button>
                                     </div>
                             </div>
+                            <br/>
+                            <Link to={'/tayschow/login'}>click now to login and add to cart!</Link> 
                                 
                             </div>
                         </div>

@@ -112,7 +112,7 @@ export const IdTemp = ({result})=>{
                                     </div>
                             </div>
                             <br/>
-                            <Link to={'/tayschow/login'}>click now to login and add to cart!</Link> 
+                            {!user && <Link to={'/tayschow/login'}>click now to login and add to cart!</Link> }
                                 
                             </div>
                         </div>

@@ -225,6 +225,13 @@ footer a{
 }
 
 /* sign user sign user */
+.sign-in-content{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+}
 #sign-user img{
   width: 10%;
 }

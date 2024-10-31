@@ -1,4 +1,4 @@
-import { createBrowserRouter, createRoutesFromChildren, Route, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, createRoutesFromChildren, Navigate, Route, RouterProvider } from 'react-router-dom';
 import { Layout } from './Layout';
 import { Index } from './Pages/Index';
 import { useEffect } from 'react';
@@ -12,6 +12,7 @@ import { SignUser } from './Pages/SignUser';
 import { Cart } from './Pages/Cart';
 import { Id } from './Pages/Id';
 import ScrollToTop from './components/ScrollToTop';
+import { ProtectedRoute } from './components/ProtectedRoute';
 
 
 // Import the functions you need from the SDKs you need
@@ -137,10 +138,10 @@ function App() {
         <Route path=':id' element={<Id/>} />
 
         </Route>
-        <Route path='/tayschow/login' element={<SignUser/>}  >
+        <Route path='/tayschow/login' element={<ProtectedRoute user={user}><SignUser/></ProtectedRoute>} >
 
         </Route>
-        <Route path='/login' element={<SignUser/>}  >
+        <Route path='/login' element={<ProtectedRoute user={user}><SignUser/></ProtectedRoute>}>
 
         </Route>
 

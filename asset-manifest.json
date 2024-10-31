@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/tayschow/static/css/main.2a284766.css",
-    "main.js": "/tayschow/static/js/main.d39441d1.js",
+    "main.css": "/tayschow/static/css/main.346e84be.css",
+    "main.js": "/tayschow/static/js/main.14d92edb.js",
     "static/js/453.dac3a3d4.chunk.js": "/tayschow/static/js/453.dac3a3d4.chunk.js",
     "static/media/vidback.mp4": "/tayschow/static/media/vidback.615297f5cca08878011e.mp4",
     "static/media/puffpuff.png": "/tayschow/static/media/puffpuff.f31a48887b8e423e6c76.png",
@@ -12,12 +12,12 @@
     "static/media/chapman.png": "/tayschow/static/media/chapman.babaab4ef13be2337abc.png",
     "static/media/tayLogo.png": "/tayschow/static/media/tayLogo.00d5261c9c8feba258e0.png",
     "index.html": "/tayschow/index.html",
-    "main.2a284766.css.map": "/tayschow/static/css/main.2a284766.css.map",
-    "main.d39441d1.js.map": "/tayschow/static/js/main.d39441d1.js.map",
+    "main.346e84be.css.map": "/tayschow/static/css/main.346e84be.css.map",
+    "main.14d92edb.js.map": "/tayschow/static/js/main.14d92edb.js.map",
     "453.dac3a3d4.chunk.js.map": "/tayschow/static/js/453.dac3a3d4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2a284766.css",
-    "static/js/main.d39441d1.js"
+    "static/css/main.346e84be.css",
+    "static/js/main.14d92edb.js"
   ]
 }
